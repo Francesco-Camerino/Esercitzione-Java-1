@@ -24,14 +24,19 @@ public class EsempioCSV {
     };
     public EsempioCSV() {
     }
-    public void leggiCSV() {
-        String mieiAutoriCSVPath = null;
+    public static String getFilePath(String filename) {
+
         try {
-            mieiAutoriCSVPath = Paths.get(ClassLoader.getSystemResource("esempio.csv")
+            return Paths.get(ClassLoader.getSystemResource("esempio.csv")
                     .toURI()).toString();
         } catch (URISyntaxException e) {
             logger.error("Errore nel trovare nel creare il file");
         }
+    return null;
+    }
+
+    public void testLetturaCSV() {
+        String mieiAutoriCSVPath = getFilePath("esempio.csv");
         Reader in = null;
         try {
             in = new FileReader(mieiAutoriCSVPath);
