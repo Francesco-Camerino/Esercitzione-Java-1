@@ -102,4 +102,7 @@ public class EsempioExcel {
         }
         IOUtils.closeQuietly(outputStream);
     }
+    public void leggiDaCSV() {
+
+    }
 }
